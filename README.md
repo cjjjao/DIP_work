@@ -1,40 +1,37 @@
 # MSO
-Pytorch Code for MSO: Multi-Feature Space Joint Optimization Network for RGB-Infrared Person Re-Identification. 
+Pytorch Code for MSO: Multi-Feature Space Joint Optimization Network for RGB-Infrared Person Re-Identification[1]. 
 
-<!--We adopt the two-stream network structure introduced in [3]. ResNet50 is adopted as the backbone. The softmax loss is adopted as the baseline. 
+We adopt the AGW[2] as the backbone. 
 
-|Datasets    | Pretrained| Rank@1  | mAP |  mINP |  Model|
-| --------   | -----    | -----  |  -----  | ----- |------|
-|#RegDB      | ImageNet | ~ 70.05% | ~ 66.37%|  ~50.19% |----- |
-|#SYSU-MM01  | ImageNet | ~ 47.50%  | ~ 47.65% | ~35.30% | [GoogleDrive](https://drive.google.com/open?id=181K9PQGnej0K5xNX9DRBDPAf3K9JosYk)|
+|Datasets    | Eage_method| Rank@1  | mAP |  mINP | 
+| --------   | -----    | -----  |  -----  | ----- |
+|#SYSU-MM01  | Laplace | ~ 49.12%  | ~ 48.91% | ~35.50% | 
+|#SYSU-MM01| | Sobel   | ~ 56.30%  | ~ 54.55% | ~40.99% | 
+|#SYSU-MM01| | Prewitt   | ~ 54.36%  | ~ 52.61% | ~38.30% | 
 
-*Both of these two datasets may have some fluctuation due to random spliting. The results might be better by finetuning the hyper-parameters. 
+* The results may have some fluctuation due to random spliting.
 
 ### 1. Prepare the datasets.
-
-- (1) RegDB Dataset [1]: The RegDB dataset can be downloaded from this [website](http://dm.dongguk.edu/link.html) by submitting a copyright form.
-
-    - (Named: "Dongguk Body-based Person Recognition Database (DBPerson-Recog-DB1)" on their website). 
-
-    - A private download link can be requested via sending me an email (mangye16@gmail.com). 
   
-- (2) SYSU-MM01 Dataset [2]: The SYSU-MM01 dataset can be downloaded from this [website](http://isee.sysu.edu.cn/project/RGBIRReID.htm).
+-  SYSU-MM01 Dataset [3]: The SYSU-MM01 dataset can be downloaded from this [website](http://isee.sysu.edu.cn/project/RGBIRReID.htm).
 
    - run `python pre_process_sysu.py` to pepare the dataset, the training data will be stored in ".npy" format.
 
 ### 2. Training.
   Train a model by
   ```bash
-python train.py --dataset sysu --lr 0.1 --method agw --gpu 1
+python train.py --dataset sysu --lr 0.1 --method agw --gpu 0
 ```
 
-  - `--dataset`: which dataset "sysu" or "regdb".
+  - `--dataset`: which dataset "sysu".
 
   - `--lr`: initial learning rate.
   
   -  `--method`: method to run or baseline.
   
   - `--gpu`:  which gpu to run.
+
+Select eage extracting method in PEF.py.
 
 You may need mannully define the data path first.
 
@@ -46,16 +43,14 @@ You may need mannully define the data path first.
 
 ### 3. Testing.
 
-Test a model on SYSU-MM01 or RegDB dataset by 
+Test a model on SYSU-MM01 dataset by 
   ```bash
-python test.py --mode all --resume 'model_path' --gpu 1 --dataset sysu
+python test.py --mode all --resume 'model_path' --gpu 0 --dataset sysu
 ```
-  - `--dataset`: which dataset "sysu" or "regdb".
+  - `--dataset`: which dataset "sysu".
   
   - `--mode`: "all" or "indoor" all search or indoor search (only for sysu dataset).
-  
-  - `--trial`: testing trial (only for RegDB dataset).
-  
+
   - `--resume`: the saved model path.
   
   - `--gpu`:  which gpu to run.
@@ -73,11 +68,9 @@ Please kindly cite this paper in your publications if it helps your research:
 ```
 
 ###  5. References.
-[1] D. T. Nguyen, H. G. Hong, K. W. Kim, and K. R. Park. Person recognition system based on a combination of body images from visible
+[1] Gao, Yajun, et al. "MSO: Multi-Feature Space Joint Optimization Network for RGB-Infrared Person Re-Identification." Proceedings of the 29th ACM International Conference on Multimedia(MM), 2021.
+
+[2] D. T. Nguyen, H. G. Hong, K. W. Kim, and K. R. Park. Person recognition system based on a combination of body images from visible
 light and thermal cameras. Sensors, 17(3):605, 2017.
 
-[2] A. Wu, W.-s. Zheng, H.-X. Yu, S. Gong, and J. Lai. Rgb-infrared crossmodality person re-identification. In IEEE International Conference on Computer Vision (ICCV), pages 5380–5389, 2017.
-
-[3]  M. Ye, Z. Wang, X. Lan, and P. C. Yuen. Visible thermal person reidentification via dual-constrained top-ranking. In International Joint Conference on Artificial Intelligence (IJCAI), pages 1092–1099, 2018.
-
-Contact: mangye16@gmail.com-->
+[3] A. Wu, W.-s. Zheng, H.-X. Yu, S. Gong, and J. Lai. Rgb-infrared crossmodality person re-identification. In IEEE International Conference on Computer Vision (ICCV), pages 5380–5389, 2017.
