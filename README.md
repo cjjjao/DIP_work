@@ -13,7 +13,7 @@ We adopt the AGW[2] as the backbone.
 
 ### 1. Prepare the datasets.
   
--  SYSU-MM01 Dataset [3]: The SYSU-MM01 dataset can be downloaded from this [website](http://isee.sysu.edu.cn/project/RGBIRReID.htm).
+-  SYSU-MM01 Dataset [3]: The SYSU-MM01 dataset can be downloaded from this [website](https://github.com/wuancong/SYSU-MM01).
 
    - run `python pre_process_sysu.py` to pepare the dataset, the training data will be stored in ".npy" format.
 
