@@ -7,7 +7,7 @@ We adopt the AGW[2] as the backbone.
 | --------   | -----    | -----  |  -----  | ----- |
 |#SYSU-MM01  | Laplace | ~ 49.12%  | ~ 48.91% | ~35.50% | 
 |#SYSU-MM01  | Sobel   | ~ 56.30%  | ~ 54.55% | ~40.99% | 
-|#SYSU-MM01  | Prewitt | ~ 54.36%  | ~ 52.61% | ~38.30% | 
+|#SYSU-MM01  | Prewitt | ~ 55.25%  | ~ 52.25% | ~37.67% | 
 
 * The results may have some fluctuation due to random spliting.
 
