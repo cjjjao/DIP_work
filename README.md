@@ -70,7 +70,6 @@ Please kindly cite this paper in your publications if it helps your research:
 ###  5. References.
 [1] Gao, Yajun, et al. "MSO: Multi-Feature Space Joint Optimization Network for RGB-Infrared Person Re-Identification." Proceedings of the 29th ACM International Conference on Multimedia(MM), 2021.
 
-[2] D. T. Nguyen, H. G. Hong, K. W. Kim, and K. R. Park. Person recognition system based on a combination of body images from visible
-light and thermal cameras. Sensors, 17(3):605, 2017.
+[2] Nguyen, Dat Tien, et al. "Person recognition system based on a combination of body images from visible light and thermal cameras." Sensors, 17(3):605, 2017.
 
-[3] A. Wu, W.-s. Zheng, H.-X. Yu, S. Gong, and J. Lai. Rgb-infrared crossmodality person re-identification. In IEEE International Conference on Computer Vision (ICCV), pages 5380–5389, 2017.
+[3] Wu, Ancong, et al. "RGB-infrared cross-modality person re-identification." In IEEE International Conference on Computer Vision (ICCV), pages 5380–5389, 2017.
