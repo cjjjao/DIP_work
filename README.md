@@ -1,7 +1,7 @@
-# Cross-Modal-Re-ID-baseline (AGW) 
-Pytorch Code for Cross-Modality Person Re-Identification (Visible Thermal Re-ID) on RegDB dataset [1] and SYSU-MM01 dataset [2]. 
+# MSO
+Pytorch Code for MSO: Multi-Feature Space Joint Optimization Network for RGB-Infrared Person Re-Identification. 
 
-We adopt the two-stream network structure introduced in [3]. ResNet50 is adopted as the backbone. The softmax loss is adopted as the baseline. 
+<!--We adopt the two-stream network structure introduced in [3]. ResNet50 is adopted as the backbone. The softmax loss is adopted as the baseline. 
 
 |Datasets    | Pretrained| Rank@1  | mAP |  mINP |  Model|
 | --------   | -----    | -----  |  -----  | ----- |------|
@@ -80,4 +80,4 @@ light and thermal cameras. Sensors, 17(3):605, 2017.
 
 [3]  M. Ye, Z. Wang, X. Lan, and P. C. Yuen. Visible thermal person reidentification via dual-constrained top-ranking. In International Joint Conference on Artificial Intelligence (IJCAI), pages 1092–1099, 2018.
 
-Contact: mangye16@gmail.com
+Contact: mangye16@gmail.com-->
